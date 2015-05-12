@@ -1,0 +1,21 @@
+<div class="container categories">
+    <h1 class="page-header">Categories</h1>
+    <ol class="breadcrumb">
+        <li class="active">Categories
+        </li>
+    </ol>
+    <p ng-if="authorization.isAuthorized('admin')">
+        <button class="btn btn-sm" ng-click='add()'>Add Category</button>
+        <button class="btn btn-sm" ng-click='sync()'>Sync with Sage One</button>        
+    </p>
+    <br ng-if="authorization.isAuthorized('admin')" />
+    <div class="row">
+        <div ng-repeat="itemCategory in itemCategories" class="col-sm-2 text-center">
+            <a ng-click="select(itemCategory)">
+                <i class="fa fa-4x" ng-class="itemCategory.icon || 'fa-cog'"></i>
+                <h4>{{itemCategory.description}} </h4>
+            </a>
+            <a ng-click="edit(itemCategory)" ng-if="authorization.isAuthorized('admin')">edit</a>
+        </div>
+    </div>
+</div>

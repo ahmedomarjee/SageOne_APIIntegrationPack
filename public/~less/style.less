@@ -1,0 +1,182 @@
+@primary: #36B34A;
+@primary-hover: #44c759;
+/* Always Show Vertical Scroll Bar */
+
+html {
+    overflow-y: scroll;
+}
+/* Space out content a bit */
+
+body {
+    padding-bottom: 20px;
+    font-size: 13px;
+    font-family: 'Segoe UI', Tahoma, Arial;
+    background-color: white;
+}
+a {
+    color: @primary;
+    cursor: pointer;
+}
+.navbar-static-top {
+    min-height: 32px;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+
+.header, .marketing, .footer {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+/* Custom page header */
+
+.header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+/* Custom page footer */
+
+.footer {
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+/* Customize container */
+
+@media (min-width: 768px) {
+    /*.container {
+    max-width: 730px;
+  }*/
+}
+/* Main marketing message and sign up button */
+
+.jumbotron {
+    padding-top: 0px;
+    text-align: center;
+    background-color: #FFF;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    
+    .header, .marketing, .footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    /* Space out the masthead */
+    
+    .header {
+        margin-bottom: 10px;
+    }
+    /* Remove the bottom border on the jumbotron for visual effect */
+    
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+.page-header {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: @primary;
+}
+.navbar-inverse {
+    .navbar-text {
+        color: #FFF;
+        margin-top: 7px;
+        margin-bottom: 3px;
+    }
+    .navbar-nav > li > a {
+        color: #FFF;
+        padding-top: 7px;
+        padding-bottom: 3px;
+    }
+    &:after {
+        background-color: blue;
+    }
+}
+.navbar-inverse:after {
+    background-color: white;
+    position: absolute;
+    height: 22px;
+    width: 100%;
+}
+.text-success {
+    color: @primary;
+}
+.btn-primary {
+    background-color: @primary;
+    border-color: @primary;
+    &:hover {
+        background-color: @primary-hover;
+        border-color: @primary-hover;
+    }
+}
+#logo {
+    background-image: url(/img/logo.png);
+    height: 55px;
+    width: 290px;
+}
+.btn-sm {
+    padding: 3px 10px;
+}
+.box-container {
+    background-color: white;
+    -webkit-box-shadow: 5px 5px 0px 0px #DEDEDE;
+    -moz-box-shadow: 5px 5px 0px 0px #DEDEDE;
+    box-shadow: 5px 5px 0px 0px #DEDEDE;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.login-container > .row {
+    height: 400px;
+    color: #666;
+}
+.signup-container > .row {
+    height: 400px;
+    color: #666;
+}
+.col-right-line {
+    float: left;
+    height: 90%;
+    width: 2px;
+    background-color: #DEDEDE;
+}
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+.categories {
+    font-family: 'Segoe UI', Tahoma, Arial;
+    &> .row > div {
+        padding-bottom: 40px;
+    }
+    a {
+        text-decoration: none;
+        cursor: pointer;
+        h4 {
+            color: #4d4f53;
+            font-size: 14px;
+            padding: 7px;
+        }
+        &> div {
+            color: #999;
+            font-size: 12px;
+            height: 50px;
+            overflow-y: hidden;
+        }
+        .fa {
+            color: #999;
+        }
+        &:hover {
+            .fa {
+                color: @primary;
+            }
+            h4 {
+                background-color: #4d4f53;
+                color: #fff;
+            }
+        }
+        ;
+    }
+}

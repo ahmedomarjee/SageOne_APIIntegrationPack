@@ -1,0 +1,16 @@
+<div class="container" ng-if="authorization.isAuthorized('admin')">
+    <h1 class="page-header">{{itemCategory._id ? 'Edit' : 'New'}} Category</h1>
+    <form>
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" name="description" ng-model="itemCategory.description" focus-element>
+        </div>
+        <div class="form-group">
+            <label>Icon</label>
+            <input type="text" class="form-control" name="icon" ng-model="itemCategory.icon">
+        </div>
+        <p ng-if="authorization.isAuthorized('admin')" style="margin-top:10px">
+            <button class="btn btn-success" ng-click='save()' type='submit'>Save</button>
+        </p>
+    </form>
+</div>

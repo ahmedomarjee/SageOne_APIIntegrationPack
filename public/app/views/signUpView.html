@@ -1,0 +1,43 @@
+<div class="container box-container signup-container">
+    <div class="row vertical-align">
+        <div class="col-xs-6">
+            <div class="text-center">
+                <img src="http://lorempixel.com/200/200/business/" class="avatar img-circle img-thumbnail" alt="avatar">
+            </div>
+        </div>
+        <div class="col-right-line"></div>
+        <div class="col-xs-1"></div>
+        <div class="col-xs-5">
+            <div class="alert alert-danger" role="alert" ng-hide="!authenticationFailed">Your email or password is incorrect</div>
+            <h5><strong><i>Welcome!</i></strong> Please enter your details below to sign up</h5>
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" ng-model="user.firstName" placeholder="First Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" ng-model="user.lastName" placeholder="Last Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-9">
+                        <input class="form-control" type="text" ng-model="user.email" placeholder="Email Address">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-lg-9">
+                        <input class="form-control" type="password" ng-model="user.password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-8">
+                        <input class="btn btn-primary" value="Sign Up" type="submit" ng-click='signUp()'>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

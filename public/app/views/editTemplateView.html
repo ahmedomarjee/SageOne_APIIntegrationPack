@@ -1,0 +1,28 @@
+<div class="container">
+    <h1 ng-if="!authorization.isAuthorized('admin')" class="page-header">{{template.name}}<br><small>{{template.description}}</small></h1>
+    <ol class="breadcrumb">
+        <li><a href="#/categories">Categories</a>
+        </li>
+        <li><a href="#/categories/{{category._id}}/templates">{{category.name}}</a>
+        </li>
+        <li class="active">{{template.name}}</li>
+    </ol>
+    <div ng-if="authorization.isAuthorized('admin')">
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" name="name" ng-model="template.name">
+        </div>
+        <div class="form-group">
+            <label>Description</label>
+            <input type="text" class="form-control" name="description" ng-model="template.description">
+        </div>
+        <div class="form-group">
+            <label>Category</label>
+            <select class="form-control" name="category" ng-model="template.category" ng-options="category._id as category.name for category in categories"></select>
+        </div>
+    </div>
+    <textarea kendo-editor k-ng-model="template.content" k-tools="['print','pdf','bold','italic','underline','strikethrough','justifyLeft','justifyCenter','justifyRight','justifyFull','insertUnorderedList','insertOrderedList','indent','outdent','insertImage','subscript','superscript','createTable','addRowAbove','addRowBelow','addColumnLeft','addColumnRight','deleteRow','deleteColumn','formatting','cleanFormatting','fontName','fontSize','foreColor','backColor']" k-pdf="{paperSize : 'a4', margin: {bottom: 20, left:20, right:20, top: 20}, author: 'Sage LegalWrite', fileName: 'Sage LegalWrite.pdf'}" style="height:550px"></textarea>
+    <p ng-if="authorization.isAuthorized('admin')" style="margin-top:10px">
+        <button class="btn btn-sm" ng-click='save()'>Save</button>
+    </p>
+</div>

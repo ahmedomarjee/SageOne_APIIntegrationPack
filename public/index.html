@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Sage One - Integration in a box</title>
+    <!-- Angular NG-Cloak-->
+    <style type="text/css">
+    [ng\:cloak],
+    [ng-cloak],
+    [data-ng-cloak],
+    [x-ng-cloak],
+    .ng-cloak,
+    .x-ng-cloak {
+        display: none !important;
+    }
+    </style>
+    <!-- CSS Files-->
+    <link rel="stylesheet" href="css/bootstrap-custom.css">
+    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- HTML5 Shim -->
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body ng-controller='applicationController'>
+    <!-- Static navbar -->
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-if="!authorization.isAuthenticated()"><a href="#/signup"><strong>Sign Up</strong></a>
+                    </li>
+                    <li>
+                        <p class="navbar-text">Sales Enquiries: <span class="text-success">+27 xx xxx xxxx</span>
+                        </p>
+                    </li>
+                    <li>
+                        <p class="navbar-text">Support Queries: <span class="text-success">+27 xx xxx xxxx</span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- /Static navbar -->
+    <!-- Logo Bar -->
+    <div class="jumbotron">
+        <div class="container">
+            <span id="logo" class="pull-left"></span>
+            <a class="btn btn-primary btn-sm logoutbtn pull-right" ng-click="logout()" ng-if="authorization.isAuthenticated()" ng-cloak="">Logout</a>
+        </div>
+    </div>
+    <hr ng-if="authorization.isAuthenticated()"/>
+    <!-- /Logo Bar -->
+    <div ng-view=""></div>
+    <!-- JS Files-->
+    <script src="lib/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="lib/lodash/lodash.min.js" type="text/javascript"></script>
+    <script src="lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src="lib/angular-route/angular-route.min.js" type="text/javascript"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>
+    <script data-main="app/app" src="lib/requirejs/require.js"></script>
+</body>
+
+</html>

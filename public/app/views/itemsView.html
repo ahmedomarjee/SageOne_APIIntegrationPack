@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="page-header">{{itemCategory.name}}</h1>
+    <ol class="breadcrumb">
+        <li><a href="#itemCategories">Categories</a>
+        </li>
+        <li class="active">{{itemCategory.description}}</li>
+    </ol>
+    <p ng-if="authorization.isAuthorized('admin')">
+        <button class="btn btn-sm" ng-click='sync()'>Sync with Sage One</button>
+    </p>
+    <ul class="list-group">
+        <li ng-click="edit(item)" class="list-group-item template-item" ng-repeat="item in items">
+            <div class="pull-right" style="padding-left:10px;"><a class="text-success text-italic" ng-click="order(item)">order</a>
+            </div>
+            <span class="badge "><i class="fa" ng-class="itemCategory.icon || 'fa-cog'"></i></span> {{item.description}} - {{item.priceInclusive | currency : 'R ' }}
+        </li>
+    </ul>
+</div>
